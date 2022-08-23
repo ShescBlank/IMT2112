@@ -1,14 +1,27 @@
-#include <stdio.h> // "librería" del printf
+/*
+Correr código (en consola):
+- Compilar: g++ 1hello_world.cpp -o name_output
+- Correr: ./name_output
+*/
 
-#include <iostream> // Estos dos son para el cout
+// Incluimos la librería standard I/O
+#include <stdio.h> // incluye al printf
+
+// Las dos líneas siguientes son para el cout
+#include <iostream>
 using namespace std;
 
-int main() { // El main es obligatirio en c++
+// La función main es la que se ejecuta cuando se corre el código
+int main() {
 
     printf("Hello World\n"); // printf no tiene salto de línea
+
+    // "\n" representa un salto de línea
+    // "\t" representa un tab (4 espacios)
 
     cout << "Hello " << "World";
     cout << " 2" << endl; // endl agrega el salto de línea
 
-    return 0; // Tiene un return porque le dijimos que la función retorna un int
+    // Debemos retornar un número porque así fue definido main
+    return 0;
 }
