@@ -15,7 +15,7 @@ wsl --install
 ```
 en la PowerShell con permisos de administrador, sin embargo, si no les funciona, recomiendo seguir la instalación manual que se menciona en el link anterior.
 
-Una vez instalado WSL y la distribución de Linux preferida (sugiero Ubuntu o Debian principalmente), recomiendo instalar la consola Windows Terminal (desde la Microsoft Store) ya que permite manejar distintos tipos de consolas dentro de la misma.
+Una vez leída la guía anterior e instalado WSL junto a su distribución de Linux preferida (sugiero Ubuntu o Debian principalmente), recomiendo instalar la consola Windows Terminal (desde la Microsoft Store) ya que permite manejar distintos tipos de consolas dentro de la misma.
 
 Una vez dentro de WSL, corran al siguiente comando:
 ```
