@@ -36,6 +36,7 @@ int main() {
   printf("a = %d\n", a);
   printf("b = %d\n", b);
   printf("c = %d\n", c);
+  printf("%d %d\n", a, b); // a y b no se modificaron después de la función suma
   printf("Promedio = %f\n", promedio(1.1, 5.7, 13.59));
 
   return 0;
