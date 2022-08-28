@@ -15,7 +15,7 @@ wsl --install
 ```
 en la PowerShell con permisos de administrador, sin embargo, si no les funciona, recomiendo seguir la instalación manual que se menciona en el link anterior.
 
-Una vez leída la guía anterior e instalado WSL junto a su distribución de Linux preferida (sugiero Ubuntu o Debian principalmente), recomiendo instalar la consola Windows Terminal (desde la Microsoft Store) ya que permite manejar distintos tipos de consolas dentro de la misma.
+Una vez leída la guía anterior e instalado WSL2 junto a su distribución de Linux preferida (sugiero Ubuntu o Debian principalmente), recomiendo instalar la consola Windows Terminal (desde la Microsoft Store) ya que permite manejar distintos tipos de consolas dentro de la misma.
 
 Una vez dentro de WSL, corran al siguiente comando:
 ```
@@ -31,6 +31,12 @@ sudo apt-get update
 sudo apt-get install git
 sudo apt-get install g++
 ```
+
+Aunque Valgrind debería venir instalado, pueden intentar instalarlo con el siguiente comando:
+```
+sudo apt-get install valgrind
+```
+es una herramienta que nos ayudará a debuggear nuestro código ya que C/C++ no va a ser muy explícito en decirnos qué está fallando.
 
 Si utilizan VS Code, deben instalar la extensión 
 ![image](https://user-images.githubusercontent.com/53873288/186965303-e73d7741-0dc4-48b5-89d3-ec318447505a.png)
