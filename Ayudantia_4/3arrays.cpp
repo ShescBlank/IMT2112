@@ -38,7 +38,7 @@ int main() {
 
     // Generación de números aleatorios
     // srand((int) time(0)); // seteamos una semilla con el tiempo actual
-                          // esto significa que cambiará bastante seguido
+                             // esto significa que cambiará bastante seguido
     //srand(1);
     
     for (int i=0;i<10;++i) {

@@ -1,8 +1,9 @@
 /*
 Correr código (en consola):
-- Compilar: g++ 4valgrind.cpp -o name_output
+- Compilar: g++ -g 5valgrind.cpp -o name_output
 - Correr con Valgrind: valgrind ./name_output 
 Valgrind se encargará de revisar nuestros errores
+pero debes compilar con -g para que nos pueda decir nuestros errores
 */
 
 #include <stdio.h>
@@ -20,16 +21,17 @@ int main() {
     int* array = (int*)calloc(end-begin, sizeof(int));
 
     // rellenemos sus valores
-    for (int i = begin; i < end+1; i++)
+    for (int i = 0; i < end-begin; i++)
     {
         array[i] = i;
     }
 
     // Imprimimamos sus resultados
-    for (int i = begin; i < end+1; i++)
+    for (int i = 0; i < end-begin; i++)
     {
         printf("%d ", array[i]);
     }
+    printf("\n");
 
     // Y cambiemos un valor
     array[N] = 100;
@@ -39,6 +41,7 @@ int main() {
     {
         printf("%d ", array[i]);
     }
+    printf("\n");
 
     // No olviden liberar la memoria reservada
     free(array);
