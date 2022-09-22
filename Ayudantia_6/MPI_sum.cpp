@@ -11,7 +11,7 @@ int main(){
 	MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
 	int firstIndex, localSize;
-    int sumlenght = 10;
+    int sumlength = 10;
     localSize = sumlength / world_size;
     firstIndex = world_rank * (sumlength/world_size);
     if (world_rank == world_size-1){

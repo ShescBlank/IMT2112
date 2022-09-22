@@ -12,7 +12,7 @@ Subir archivos:
 
 - Opción 1: ```scp -r local_dir username@mazinger.ing.puc.cl:server_dir```
 
-    La línea anterior se corre en consola y el -r sirve para subir una carpeta (si que quita, se sube el archivo del path indicado). Por ejemplo: tengo mi carpeta ```T2``` y quiero subirla a mi carpeta del servidor, entonces, ubicado en el path de mi carpeta en la consola, escribo el comando  ```scp -r /T2 alberto.almuna@mazinger.ing.puc.cl:~```, les preguntará por su contraseña.
+    La línea anterior se corre en consola y el -r sirve para subir una carpeta (si que quita, se sube el archivo del path indicado). Por ejemplo: tengo mi carpeta ```T2``` y quiero subirla a mi carpeta del servidor, entonces, ubicado en el path de mi carpeta en la consola, escribo el comando  ```scp -r T2/ alberto.almuna@mazinger.ing.puc.cl:~```, les preguntará por su contraseña.
 
 - Opción 2: crear un repositorio de github y clonarlo en su computador y en el servidor, subir archivos con commits.
 
