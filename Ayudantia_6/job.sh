@@ -8,5 +8,5 @@
 #SBATCH --ntasks=4
 #SBATCH --cpus-per-task=1
 
-mpic++ hello_world.cpp
+mpic++ MPI_hello_world.cpp
 mpirun a.out
