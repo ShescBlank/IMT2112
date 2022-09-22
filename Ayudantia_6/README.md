@@ -22,8 +22,9 @@ Para correr nuestros códigos podemos hacer lo mismo que en nuestro computador o
 
 La forma de compilar y correr nuestro código con MPI es la siguiente:
 
-- ```mpic++ code.cpp``` -> compila el código y lo guarda en a.out
+- ```mpic++ code.cpp -std=c++11``` -> compila el código y lo guarda en a.out
 - ```mpirun ./a.out``` -> corre el ejecutable a.out
+- ```mpirun -np 2 ./a.out``` -> corre el ejecutable a.out con 2 procesos
 
 Y para agregarlo a la cola de trabajo (con el job.sh creado):
 
