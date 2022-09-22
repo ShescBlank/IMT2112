@@ -12,7 +12,7 @@ Subir archivos:
 
 - Opción 1: ```scp -r local_dir username@mazinger.ing.puc.cl:server_dir```
 
-    La línea anterior se corre en consola y el -r sirve para subir una carpeta (si que quita, se sube el archivo del path indicado). Por ejemplo: tengo mi carpeta ```T2``` y quiero subirla a mi carpeta del servidor, entonces, ubicado en el path de mi carpeta en la consola, escribo el comando  ```scp -r T2/ alberto.almuna@mazinger.ing.puc.cl:~```, les preguntará por su contraseña.
+    La línea anterior se corre en consola y el -r sirve para subir una carpeta (si se quita, se sube el archivo indicado en el path). Por ejemplo: tengo mi carpeta ```T2``` y quiero subirla a mi carpeta del servidor, entonces, ubicado en el path de mi carpeta en la consola, escribo el comando  ```scp -r T2/ alberto.almuna@mazinger.ing.puc.cl:~```, les preguntará por su contraseña.
 
 - Opción 2: crear un repositorio de github y clonarlo en su computador y en el servidor, subir archivos con commits.
 
@@ -25,7 +25,7 @@ La forma de compilar y correr nuestro código con MPI es la siguiente:
 - ```mpic++ code.cpp``` -> compila el código y lo guarda en a.out
 - ```mpirun ./a.out``` -> corre el ejecutable a.out
 
-Y para agregarlo a lo cola de trabajo (con el job.sh creado):
+Y para agregarlo a la cola de trabajo (con el job.sh creado):
 
 - ```sbatch job.sh``` -> agrega el trabajo job.sh a la cola de trabajo
 
