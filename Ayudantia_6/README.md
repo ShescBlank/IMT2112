@@ -32,4 +32,9 @@ Y para agregarlo a la cola de trabajo (con el job.sh creado):
 
 Para obtener información de la cola podemos usar ```squeue```, ```top``` o ```htop```.
 
+Para instalar MPI en WSL, pueden usar los siguientes comandos en consola:
+
+    sudo apt-get update
+    sudo apt install openmpi-bin libopenmpi-dev
+
 Para más información sobre el clúster de Ing: https://deg.ing.uc.cl/informatica/cluster/
