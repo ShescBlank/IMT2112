@@ -49,9 +49,9 @@ void print_vector(int* vector, int n) {
 
 int main() {
     MPI_Init(NULL,NULL);
-	int world_size, world_rank;
-	MPI_Comm_size(MPI_COMM_WORLD, &world_size);
-	MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+    int world_size, world_rank;
+    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
+    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
     if (world_rank == 0) {
         printf("Cantidad de procesos: %i\n\n", world_size);
@@ -70,24 +70,24 @@ int main() {
 
     printf("Rank %i, local columnas: %i, first index %i \n", world_rank, localColumnas, firstIndex);
 
-	int localVec[localColumnas];
+	  int localVec[localColumnas];
 
-	for (int i=0; i<localColumnas; i++) {
+	  for (int i=0; i<localColumnas; i++) {
         localVec[i] = firstIndex + i;
-	}
+	  }
 
     int** localMat = matrix_generator(n, localColumnas, world_rank);
     //print_vector(localVec, localColumnas);
     //print_matrix(localMat, n, localColumnas);
-	int* localResult = (int*) calloc(n, sizeof(int));
+	  int* localResult = (int*) calloc(n, sizeof(int));
 
 
     printf("Rank %i, empezando local mat vec\n", world_rank);
-	for (int i=0; i<n; i++) {
+	  for (int i=0; i<n; i++) {
         for (int j=0; j<localColumnas; j++) {
             localResult[i] += localMat[i][j] * localVec[j];
         }
-	}
+	  }
     printf("Rank %i, terminó local mat vec\n", world_rank);
 
 

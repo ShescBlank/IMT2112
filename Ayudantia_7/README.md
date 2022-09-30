@@ -30,6 +30,8 @@ Y para agregarlo a la cola de trabajo (con el job.sh creado):
 
 - ```sbatch job.sh``` -> agrega el trabajo job.sh a la cola de trabajo
 
+Esto les generará el archivo ```log.out``` y este se lo pueden mandar a su carpeta local con scp. Un ejemplo de esto: ```scp alberto.almuna@mazinger.ing.puc.cl:~/Ayudantia_7/log.out ./Ayudantia_7/``` en este caso estamos enviando el archivo log.out en la carpeta Ayudantia_7/ desde el servidor a la carpeta Ayudantia_7/ de donde estamos parados.
+
 Para obtener información de la cola podemos usar ```squeue```, ```top``` o ```htop```.
 
 Para instalar MPI en WSL, pueden usar los siguientes comandos en consola:
