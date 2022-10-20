@@ -74,10 +74,10 @@ int main() {
 
 	// Allocate memory on the device
     // Reservamos la memoria necesaria en el dispositivo (simulando lo que recién creamos)
-    cl_mem d_a = clCreateBuffer(ctx, CL_MEM_READ_ONLY, n * sizeof(int), NULL, &err);
-    cl_mem d_b = clCreateBuffer(ctx, CL_MEM_READ_ONLY, n * sizeof(int), NULL, &err);
-    cl_mem d_c = clCreateBuffer(ctx, CL_MEM_READ_ONLY, n * sizeof(int), NULL, &err);
-    cl_mem d_d = clCreateBuffer(ctx, CL_MEM_READ_ONLY, n * sizeof(int), NULL, &err);
+    cl_mem d_a = clCreateBuffer(ctx, CL_MEM_WRITE_ONLY, n * sizeof(int), NULL, &err);
+    cl_mem d_b = clCreateBuffer(ctx, CL_MEM_WRITE_ONLY, n * sizeof(int), NULL, &err);
+    cl_mem d_c = clCreateBuffer(ctx, CL_MEM_WRITE_ONLY, n * sizeof(int), NULL, &err);
+    cl_mem d_d = clCreateBuffer(ctx, CL_MEM_WRITE_ONLY, n * sizeof(int), NULL, &err);
     // El prefijo d_ lo ponemos para marcar los elementos del device
 
 	// Initialise on device memory
@@ -97,7 +97,7 @@ int main() {
     err = clSetKernelArg(mykernel, 1, sizeof(cl_mem), (void *)&d_b);
     err = clSetKernelArg(mykernel, 2, sizeof(cl_mem), (void *)&d_c);
     err = clSetKernelArg(mykernel, 3, sizeof(cl_mem), (void *)&d_d);
-    err = clSetKernelArg(mykernel, 4, sizeof(cl_mem), (void *)&n);
+    err = clSetKernelArg(mykernel, 4, sizeof(unsigned int), (void *)&n);
 
     // Execute the kernel in chunks of localSize
     // Podemos ejecutar nuestro kernel en distintos tamaños de grupos de trabajo. Independiente del tamaño de trabajo que elijamos,
@@ -110,7 +110,7 @@ int main() {
     // Ponemos a la cola nuestro kernel para que se ejecute:
     err = clEnqueueNDRangeKernel(myqueue, mykernel, 1, NULL, &globalSize, &localSize, 0, NULL, NULL);
 	printf("Local workgroup size: %i\n\n", (int)localSize);
-	printf("Glocal workgroup size: %i\n\n", (int)globalSize);
+	printf("Global workgroup size: %i\n\n", (int)globalSize);
 
     // Read back the results to the device
     // Pasamos los resultados obtenidos por el coprocesador a nuestras variables que definimos inicialmente:

@@ -1,4 +1,4 @@
-// Compilation as: gcc -framework OpenCL opencl-reduction.cpp
+// Compilar en Linux: g++ 6-opencl-reduction-2.cpp -lOpenCL
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -103,7 +103,7 @@ int main(int argc, char *argv[])
     err = clGetDeviceIDs(platform, CL_DEVICE_TYPE_GPU, 1, &device, NULL);
     cl_context_properties cps[3] = { CL_CONTEXT_PLATFORM, (cl_context_properties)platform, 0 };
     context = clCreateContext(cps, 1, &device, NULL, NULL, &err);
-    commands = clCreateCommandQueue(context, device, 0, &err);
+    commands = clCreateCommandQueueWithProperties(context, device, 0, &err);
 
     // print device name
     size_t valueSize;
