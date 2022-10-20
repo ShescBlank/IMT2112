@@ -1,16 +1,20 @@
-// Compilation as: gcc -framework OpenCL opencl-devices.cpp
+// Compilar en Linux: g++ 1-opencl-devices.cpp -lOpenCL
 
+// Includes generales
 #include <stdio.h>
 #include <stdlib.h>
 
+// Hacemos un if para los include, en caso de que estemos en un dispositivo Apple o Linux
 #ifdef __APPLE__
 #include <OpenCL/opencl.h>
 #else
 #include <CL/cl.h>
 #endif
 
+// Empezamos con nuestra función main
 int main() {
 
+    // Declaramos algunas variables que necesitaremos:
     int i, j;
     char* value;
     size_t valueSize;
@@ -20,21 +24,22 @@ int main() {
     cl_device_id* devices;
     cl_uint maxComputeUnits;
 
-    // get all platforms
-    clGetPlatformIDs(0, NULL, &platformCount);
-    platforms = (cl_platform_id*) malloc(sizeof(cl_platform_id) * platformCount);
-    clGetPlatformIDs(platformCount, platforms, NULL);
+    // Queremos ver todas las plataformas que tenemos disponibles:
+    clGetPlatformIDs(0, NULL, &platformCount); // Obtenemos la cantidad de plataformas
+    platforms = (cl_platform_id*) malloc(sizeof(cl_platform_id) * platformCount); // Hacemos un array para guardar los ids de las plataformas
+    clGetPlatformIDs(platformCount, platforms, NULL); // Guardamos sus ids en el array
 
-    for (i = 0; i < platformCount; i++) {
-
-        // get all devices
+    // Recorremos las plataformas para obtener su información:
+    for (i = 0; i < platformCount; i++) 
+    {
+        // Agarramos todos los dispositivos de esta plataforma:
         clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ALL, 0, NULL, &deviceCount);
-        devices = (cl_device_id*) malloc(sizeof(cl_device_id) * deviceCount);
+        devices = (cl_device_id*) malloc(sizeof(cl_device_id) * deviceCount); // Nuevamente reservamos un array, ahora para guardar los dispositivos
         clGetDeviceIDs(platforms[i], CL_DEVICE_TYPE_ALL, deviceCount, devices, NULL);
 
-        // for each device print information
-        for (j = 0; j < deviceCount; j++) {
-
+        // E imprimimos la información de cada uno
+        for (j = 0; j < deviceCount; j++)
+        {
             // print device name
             clGetDeviceInfo(devices[j], CL_DEVICE_NAME, 0, NULL, &valueSize);
             value = (char*) malloc(valueSize);
@@ -70,11 +75,13 @@ int main() {
 
         }
 
+        // Liberamos el array de los dispositivos
         free(devices);
-
     }
 
+    // Liberamos el array de las plataformas
     free(platforms);
-    return 0;
 
+    // Retornamos
+    return 0;
 }

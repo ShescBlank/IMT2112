@@ -1,4 +1,4 @@
-// Compilation as: gcc -framework OpenCL opencl-workgroup.cpp
+// Compilar en Linux: g++ 2-opencl-workgroup.cpp -lOpenCL
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,7 +28,6 @@ int main() {
     clGetDeviceInfo(device, CL_DEVICE_NAME, valueSize, value, NULL);
     printf("Device name: %s\n", value);
     free(value);
-    
     
     // print size of work group
     
