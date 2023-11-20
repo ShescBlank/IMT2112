@@ -7,7 +7,7 @@ En particular, lo primero que se debe hacer en Google Colab es ir a 'Entorno de 
     !sudo apt update
     !sudo apt install nvidia-cuda-toolkit -y
 
-    # Para correr en CPU:
+    # Para correr en CPU en el entorno de GPU de Colab:
     !sudo apt install -y pocl-opencl-icd
 
 Subiendo los códigos de la ayudantía a Colab y haciendo los pasos anteriores, no debería haber problemas corriendo los códigos con PyOpenCL.
