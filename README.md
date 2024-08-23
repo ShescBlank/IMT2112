@@ -15,7 +15,7 @@ wsl --install
 ```
 en la PowerShell con permisos de administrador, sin embargo, si no les funciona, recomiendo seguir la instalación manual que se menciona en el link anterior.
 
-Una vez leída la guía anterior e instalado WSL2 junto a su distribución de Linux preferida (sugiero instalar Ubuntu desde la Microsoft Store), recomiendo instalar la consola Windows Terminal (también desde la Microsoft Store) ya que permite manejar distintos tipos de consolas dentro de la misma.
+Una vez leída la guía anterior e instalado WSL2 junto a su distribución de Linux preferida (sugiero instalar Ubuntu que es la que viene por defecto en el comando anterior), recomiendo instalar la consola Windows Terminal (desde la Microsoft Store) ya que permite manejar distintos tipos de consolas dentro de la misma y, en general, es bastante cómoda.
 
 Una vez dentro de WSL, corran al siguiente comando:
 ```
@@ -47,10 +47,18 @@ code .
 ```
 en la consola de WSL y les abrirá VS Code dentro del entorno de la distribución de Linux.
 
+Además, recomiendo instalar la extensión de C/C++ de VS Code, ya que contiene algunos atajos que nos ayudarán a programar más rápido!
+
+## Correr código de C/C++ en Mac
+
+El año pasado me compartieron el siguiente [video](https://youtu.be/lGsyqgpMAYY?si=Nllk5YKNcEBY_p1E) para la instalación en Mac (M1/M2). No lo puedo probar, pero el año pasado no produjo problemas para la realización del curso. Por favor avísenme si es que encuentran que algún otro tutorial les funciona mejor o si este presenta problemas.
+
+## Extas
+
 Por último, algunos comando útiles para navegar dentro de la consola:
 - ```cd nombre_carpeta```: es para moverse por los directorios
 - ```cd ..```: es para devolverse una carpeta
 - ```mkdir nombre_carpeta```: es para crear una nueva carpeta
 - ```ls```: es para ver los archivos que se encuentran en el directorio actual
 
-## Si quieren aprender más o profundizar sobre lo visto en la ayudantía les recomiendo el siguiente [enlace](https://github.com/DCCentral-de-Apuntes/intro-C). Es un un taller muy completo para aprender C y que nos sirve para entender C++.
+## Si quieren aprender más o profundizar sobre lo visto en la ayudantía les recomiendo el siguiente [enlace](https://github.com/DCCentral-de-Apuntes/intro-C). Es un un taller muy completo para aprender C y que nos sirve para entender C++. Además, cualquier problema que tengan con la instalación, no duden en escribirme para ver si lo podemos solucionar 🐧
