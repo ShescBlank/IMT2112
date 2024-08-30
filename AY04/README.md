@@ -14,7 +14,7 @@ Si quieren cambiar su contraseña del servidor, pueden usar el comando ```yppass
 
 Subir y recibir archivos:
 
-- Opción 1: ```scp -r local_dir username@mazinger.ing.puc.cl:server_dir```
+- Opción 1: ```scp -r local_dir username@cluster.ing.uc.cl:server_dir```
 
     La línea anterior se corre en consola y el -r sirve para subir una carpeta (si se quita, se sube el archivo indicado en el path). Por ejemplo: tengo mi carpeta ```T2``` y quiero subirla a mi carpeta del servidor, entonces, ubicado en el path de mi carpeta en la consola, escribo el comando  ```scp -r AY04/ alberto.almuna@cluster.ing.uc.cl:~```, les preguntará por su contraseña. Este comando también se puede utilizar para enviar archivos desde el clúster a nuestro computador y solo basta con intercambiar el destino y origen (Ej: ```scp alberto.almuna@cluster.ing.uc.cl:~/log.out ./AY04```)
 
