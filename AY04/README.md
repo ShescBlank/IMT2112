@@ -37,3 +37,11 @@ Para obtener información de la cola podemos usar ```squeue```, ```top``` o ```h
 Para más información sobre el clúster de Ing: https://deg.ing.uc.cl/informatica/cluster/
 
 En particular, en la página https://deg.ing.uc.cl/informatica/cluster/trabajos-al-cluster/ en la sección de "Solicitud de CPU" se puede observar otro ejemplo de un archivo como ```job.sh```.
+
+# Video Clúster
+
+Hace un par de años hice un video que revisa todo lo importante relacionado al clúster (quizás ya toca hacerle una actualización, pero se los dejo disponible por si les sirve):
+
+https://youtu.be/LqeU8yo_b-w
+
+En este video uso el ssh con "mazinger.ing.puc.cl", pero hace poco se cambió a "cluster.ing.uc.cl". A mi todavía me funciona el anterior, pero igual les recomiendo utilizar la dirección más nueva.
