@@ -1,6 +1,6 @@
 /*
 Correr código (en consola):
-- Compilar: mpic++ 1MPI_hello_world.cpp
+- Compilar: mpic++ 1MPI_hello_world.cpp -std=c++11
 - Correr (con 2 procesos): mpirun -np 2 ./a.out
 Se puede cambiar el número de procesos con el que se corre
 */

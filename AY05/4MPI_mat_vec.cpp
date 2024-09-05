@@ -1,3 +1,10 @@
+/*
+Correr código (en consola):
+- Compilar: mpic++ 4MPI_mat_vec.cpp -std=c++11
+- Correr (con 2 procesos): mpirun -np 2 ./a.out
+Se puede cambiar el número de procesos con el que se corre
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <chrono>
@@ -91,6 +98,9 @@ int main() {
     printf("Rank %i, terminó local mat vec\n", world_rank);
 
 
+    // Ahora nos toca reunir los resultados locales en el proceso 0.
+    // Lo haremos con Send y Recv, pero también podemos usar operaciones colectivas
+    // (notar eso sí que ahora estamos mandando n ints y no 1 como en los ejemplos anteriores).
     if (world_rank == 0) {
         printf("Rank 0 va a empezar el proceso de recibir\n");
         int* buffer = (int*) calloc(n, sizeof(int));
@@ -108,7 +118,7 @@ int main() {
     } else {
         printf("Rank %i va a enviar\n", world_rank);
         err = MPI_Send(localResult, n, MPI_INT, 0, world_rank, MPI_COMM_WORLD);
-        printf("Rank %i termino de enviar\n", world_rank);
+        printf("Rank %i terminó de enviar\n", world_rank);
         //MPI_Send(void* data, int count, MPI_Datatype datatype, int destination, int tag, MPI_Comm communicator)
     }
 

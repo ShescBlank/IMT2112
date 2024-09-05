@@ -1,6 +1,6 @@
 /*
 Correr código (en consola):
-- Compilar: mpic++ 3MPI_dot.cpp
+- Compilar: mpic++ 3MPI_dot.cpp -std=c++11
 - Correr (con 2 procesos): mpirun -np 2 ./a.out
 Se puede cambiar el número de procesos con el que se corre
 */
@@ -28,7 +28,7 @@ int main() {
     // Inicializamos algunas variables que utilizaremos
     int firstIndex, localSize, n, err;
     
-    // Vamos a trabajar con verctores de largo n
+    // Vamos a trabajar con vectores de largo n
     n = 7;
 
     // Calculamos el primer índice y el tamaño local de cada proceso
@@ -80,8 +80,8 @@ int main() {
 
 /*
 Cabe destacar que, en estos ejemplos, estamos viendo casos en que cada proceso se preocupa de crear y trabajar su parte local.
-En otros casos puede ocurrir que el proceso raíz, por ejemplo, tiene una matriz gigante y el resto de procesos no la tiene.
-Entonces, el proceso raíz se debe encargar de enviar las partes locales (de la matriz gigante) correspondientes a cada proceso,
-para que estos puedan trabajar y luego enviar sus resultados. Notar que no vale la pena que cada proceso posea una copia entera
-de la matriz gigante, es mejor que solo tengan lo que les corresponde.
+En general, no vale la pena que cada proceso posea una copia entera de la matriz o vector que se está trabajando, ya que habría mucha 
+información repetida, lo que provoca que se utilice más memoria de la necesaria y hay que tener mucho ojo si se quiere actualizar 
+alguna entrada de esos objetos (repartir la información a todos los procesos y cuidar que los cálculos se realicen con las últimas versiones de todo).
+En resumen, es mejor que cada proceso trabaje solo con lo que le corresponde, creándolo/leyéndolo él mismo desde un inicio.
 */
