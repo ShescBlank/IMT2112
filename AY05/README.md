@@ -35,13 +35,14 @@ Para correr nuestros códigos podemos hacer lo mismo que en nuestro computador o
 
 La forma de compilar y correr nuestro código con MPI es la siguiente:
 
+- Antes de poder compilar con ```mpic++``` en el clúster, es necesario correr el comando ```module load mpi/openmpi-x86_64``` en la consola del servidor (cada vez que nos conectemos es necesario volver a correr el comando anterior). Esto carga el módulo asociado a MPI, lo que significa que ahora podremos compilar y correr nuestros scripts de la misma manera que en nuestro computador personal. En caso de no correr la línea anterior luego de hacer login e intentar compilar, nos aparecerá un error de que no se encuentra el comando ```mpic++```.
 - ```mpic++ code.cpp -std=c++11``` -> compila el código y lo guarda en a.out
 - ```mpirun ./a.out``` -> corre el ejecutable a.out
 - ```mpirun -np 2 ./a.out``` -> corre el ejecutable a.out con 2 procesos
 
 Y para agregarlo a la cola de trabajo (con el job.sh creado):
 
-- ```sbatch job.sh``` -> agrega el trabajo job.sh a la cola de trabajo
+- ```sbatch job.sh``` -> agrega el trabajo job.sh a la cola de trabajo. Ojo que también es necesario correr el comando ```module load mpi/openmpi-x86_64``` antes de mandar el trabajo a la cola.
 
 En nuestro caso, una vez que termine el job, creará un archivo ```log.out``` con el resultado obtenido. Si queremos leerlo rápidamente, podemos usar el comando ```cat log.out```.
 
@@ -59,4 +60,6 @@ Hace un par de años hice un video que revisa todo lo importante relacionado al 
 
 https://youtu.be/LqeU8yo_b-w
 
-En este video uso el ssh con "mazinger.ing.puc.cl", pero hace poco se cambió a "cluster.ing.uc.cl". A mi todavía me funciona el anterior, pero igual les recomiendo utilizar la dirección más nueva.
+### IMPORTANTE: Cuando hice este video no era necesario correr el comando de ```module load mpi/openmpi-x86_64``` antes de querer compilar códigos de MPI, sin embargo, si ahora intentan ejecutar ```mpic++``` sin correr la línea anterior, el servidor les tirará un error porque no será capaz de encontrar el comando.
+
+Otro detalle es que uso el ssh con "mazinger.ing.puc.cl", pero hace poco se cambió a "cluster.ing.uc.cl". A mi todavía me funciona el anterior, pero igual les recomiendo utilizar la dirección más nueva.
