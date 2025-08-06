@@ -10,7 +10,7 @@ Siendo ```username``` el nombre de usuario de su correo UC. Luego de escribir lo
 
 Una vez dentro, se pueden usar los comandos típicos que usamos en consola: ```ls```, ```cd```, ```rm```, ```mkdir```, ```htop``` (para ver los procesos corriendo en el servidor), entre otros.
 
-Si quieren cambiar su contraseña del servidor, pueden usar el comando ```yppasswd```.
+Si quieren cambiar su contraseña del servidor, pueden usar el comando ```passwd```.
 
 Subir y recibir archivos:
 
@@ -45,3 +45,4 @@ Hace un par de años hice un video que revisa todo lo importante relacionado al 
 https://youtu.be/LqeU8yo_b-w
 
 En este video uso el ssh con "mazinger.ing.puc.cl", pero hace poco se cambió a "cluster.ing.uc.cl". A mi todavía me funciona el anterior, pero igual les recomiendo utilizar la dirección más nueva.
+
